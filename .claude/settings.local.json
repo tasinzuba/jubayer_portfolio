@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:hacker.house)",
+      "WebSearch",
+      "WebFetch(domain:web.archive.org)",
+      "Bash(curl -s -L --max-time 15 \"https://hacker.house/\")",
+      "Bash(curl -s -L --max-time 15 \"https://hacker.house/assets/main-o3iOhhvt.css\")",
+      "Bash(curl -s -L --max-time 15 \"https://hacker.house/client/main.js\")",
+      "Bash(grep -oP '\\(background|color|font|border|gradient|shadow|glow|#[0-9a-fA-F]{3,8}|rgba?\\\\\\([^\\)]+\\\\\\)|var\\\\\\(--[^\\)]+\\\\\\)\\)')",
+      "Bash(grep -oE '\"[^\"]{20,200}\"')",
+      "Bash(npm run:*)"
+    ]
+  }
+}
