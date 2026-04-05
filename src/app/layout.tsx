@@ -27,8 +27,22 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Md Jubayer Ahamed — Full Stack Developer",
     description:
-      "Full Stack Developer & Digital Marketing Expert. Explore my interactive terminal portfolio.",
+      "Full Stack Developer & Digital Marketing Expert. Next.js, Go, React, Node.js. Book a free consultation.",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Md Jubayer Ahamed — Full Stack Developer Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Md Jubayer Ahamed — Full Stack Developer",
+    description:
+      "Full Stack Developer & Digital Marketing Expert. Next.js, Go, React, Node.js. Book a free consultation.",
   },
 };
 

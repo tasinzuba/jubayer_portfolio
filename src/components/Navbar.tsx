@@ -74,7 +74,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href={`mailto:${personalInfo.email}`}
+            href="#contact"
             className="btn btn-primary text-xs px-5 py-2.5 ml-4"
           >
             Hire Me
