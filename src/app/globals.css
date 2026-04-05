@@ -495,9 +495,17 @@ html, body {
   border-radius: 1px;
 }
 
-.nav-link:hover::after,
+.nav-link:hover::after {
+  width: 100%;
+}
+
 .nav-link.active::after {
   width: 100%;
+}
+
+/* When any nav-link is hovered, hide active line from non-hovered active */
+.nav-links:hover .nav-link.active:not(:hover)::after {
+  width: 0;
 }
 
 /* ── Footer Link ──────────────────────────────────────────── */

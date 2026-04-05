@@ -43,6 +43,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  // ── Client projects (priority) ─────────────────────────────
   {
     id: "1",
     title: "Banglay IELTS",
@@ -54,22 +55,74 @@ export const projects: Project[] = [
     category: "fullstack",
   },
   {
-    id: "2",
-    title: "BIIC — Study Abroad Center",
+    id: "biic-new",
+    title: "BIIC — Study Abroad Platform",
     description:
-      "Professional study abroad & immigration center. Course display, testimonials, blog, optimized performance.",
-    tech: ["WordPress", "PHP", "MySQL", "JavaScript", "SEO"],
-    liveUrl: "http://biic.com.bd",
+      "Full-stack study abroad consultancy platform built with Next.js. University admissions, visa support, IELTS prep, scholarship guidance with smooth animations.",
+    tech: ["Next.js", "React", "Tailwind CSS", "SSR"],
+    liveUrl: "https://biic-new.vercel.app/",
     featured: true,
     category: "fullstack",
   },
+  {
+    id: "bielts-dashboard",
+    title: "Banglay IELTS Teacher Dashboard",
+    description:
+      "Teacher management dashboard for IELTS preparation platform. PWA-enabled, real-time data, role-based access, mobile-optimized.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "PWA"],
+    liveUrl: "http://tr.biic.com.bd/",
+    featured: true,
+    category: "fullstack",
+  },
+  {
+    id: "12",
+    title: "CDIELTS",
+    description:
+      "IELTS mock test system. Practice exams, scoring algorithms, analytics, real-time feedback.",
+    tech: ["Vue.js", "Laravel", "MySQL", "Analytics"],
+    liveUrl: "http://cdielts.org",
+    featured: true,
+    category: "fullstack",
+  },
+  // ── Portfolio & apps ───────────────────────────────────────
+  {
+    id: "tiz-portfolio",
+    title: "TIZ — Cinematic Video Editor Portfolio",
+    description:
+      "Portfolio & course platform for a professional video editor. Showcases editing services, online course, testimonials, and cinematic work.",
+    tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    liveUrl: "https://portfolio-site-pi-orcin-42.vercel.app/",
+    featured: true,
+    category: "frontend",
+  },
+  {
+    id: "movie-portal",
+    title: "Recape Movie — Movie Portal",
+    description:
+      "Movie discovery & review platform. Browse 500+ movies, community ratings, watchlists, subscription plans, genre filtering.",
+    tech: ["Next.js", "React", "Tailwind CSS", "SSR"],
+    liveUrl: "https://movie-portal-frontend-eight.vercel.app/",
+    featured: true,
+    category: "fullstack",
+  },
+  {
+    id: "medistore",
+    title: "MediStore — Online Pharmacy",
+    description:
+      "Online pharmacy platform for Bangladesh. Medicine catalog, cart, auth, category browsing, fast delivery system.",
+    tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    liveUrl: "https://frontend-one-orpin-24.vercel.app/",
+    featured: true,
+    category: "fullstack",
+  },
+  // ── Other projects ─────────────────────────────────────────
   {
     id: "3",
     title: "Go REST API Microservice",
     description:
       "High-performance RESTful API built with Go and Gin framework. JWT auth, rate limiting, PostgreSQL, Docker containerized.",
     tech: ["Go", "Gin", "PostgreSQL", "Docker", "JWT"],
-    githubUrl: "https://github.com/tasinbi/go-rest-api",
+    githubUrl: "https://github.com/tasinzuba/go-rest-api",
     featured: true,
     category: "backend",
   },
@@ -79,8 +132,8 @@ export const projects: Project[] = [
     description:
       "Full-stack analytics dashboard with Next.js App Router, server actions, real-time charts, and role-based auth.",
     tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind"],
-    githubUrl: "https://github.com/tasinbi/nextjs-dashboard",
-    featured: true,
+    githubUrl: "https://github.com/tasinzuba/nextjs-dashboard",
+    featured: false,
     category: "fullstack",
   },
   {
@@ -90,7 +143,7 @@ export const projects: Project[] = [
       "Stylish e-commerce for fashion & lifestyle. Product catalog, cart, payments, mobile-first design.",
     tech: ["WordPress", "WooCommerce", "PHP", "MySQL"],
     liveUrl: "http://shamz.com.bd",
-    featured: true,
+    featured: false,
     category: "fullstack",
   },
   {
@@ -99,19 +152,9 @@ export const projects: Project[] = [
     description:
       "Terminal-based task manager built in Go with Cobra CLI. SQLite storage, priority system, Markdown export.",
     tech: ["Go", "Cobra", "SQLite", "CLI"],
-    githubUrl: "https://github.com/tasinbi/go-task-cli",
+    githubUrl: "https://github.com/tasinzuba/go-task-cli",
     featured: false,
     category: "backend",
-  },
-  {
-    id: "7",
-    title: "Next.js Blog Platform",
-    description:
-      "MDX-powered blog with Next.js 14+, ISR, full-text search, dark mode, and SEO-optimized dynamic OG images.",
-    tech: ["Next.js", "MDX", "Tailwind", "Vercel"],
-    githubUrl: "https://github.com/tasinbi/nextjs-blog",
-    featured: true,
-    category: "frontend",
   },
   {
     id: "8",
@@ -131,7 +174,7 @@ export const projects: Project[] = [
     tech: ["React", "JavaScript", "CSS", "Vercel"],
     liveUrl: "https://react-e-commerce-main-zeta.vercel.app/",
     githubUrl: "https://github.com/tasinzuba/React_E-Commerce-main",
-    featured: true,
+    featured: false,
     category: "frontend",
   },
   {
@@ -140,7 +183,7 @@ export const projects: Project[] = [
     description:
       "Fast URL shortener service with Go and Redis. Custom slugs, analytics dashboard, rate limiting, and REST API.",
     tech: ["Go", "Fiber", "Redis", "PostgreSQL", "Docker"],
-    githubUrl: "https://github.com/tasinbi/go-url-shortener",
+    githubUrl: "https://github.com/tasinzuba/go-url-shortener",
     featured: false,
     category: "backend",
   },
@@ -150,17 +193,7 @@ export const projects: Project[] = [
     description:
       "Production-ready SaaS template with Next.js. Stripe billing, auth, admin panel, multi-tenant architecture.",
     tech: ["Next.js", "TypeScript", "Stripe", "Prisma", "NextAuth"],
-    githubUrl: "https://github.com/tasinbi/nextjs-saas-starter",
-    featured: true,
-    category: "fullstack",
-  },
-  {
-    id: "12",
-    title: "CDIELTS",
-    description:
-      "IELTS mock test system. Practice exams, scoring algorithms, analytics, real-time feedback.",
-    tech: ["Vue.js", "Laravel", "MySQL", "Analytics"],
-    liveUrl: "http://cdielts.org",
+    githubUrl: "https://github.com/tasinzuba/nextjs-saas-starter",
     featured: false,
     category: "fullstack",
   },
