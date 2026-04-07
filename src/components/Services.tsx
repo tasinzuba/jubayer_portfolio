@@ -4,6 +4,7 @@ import {
   useScrollReveal,
   useStaggeredReveal,
 } from "@/hooks/useScrollReveal";
+import { useTheme } from "./ThemeProvider";
 
 const SERVICES = [
   {
@@ -61,6 +62,8 @@ export default function Services() {
     useScrollReveal<HTMLDivElement>();
   const { ref: gridRef, isVisible: gridVisible } =
     useScrollReveal<HTMLDivElement>({ threshold: 0.05 });
+  const { theme } = useTheme();
+  const isLight = theme === "light";
   const cardVisible = useStaggeredReveal(
     SERVICES.length,
     gridVisible,
@@ -125,7 +128,11 @@ export default function Services() {
                 {service.tech.map((t) => (
                   <span
                     key={t}
-                    className="text-[11px] font-mono px-2.5 py-1 border border-border-green rounded-full text-primary/70 bg-primary/[0.03] group-hover:border-primary/30 transition-colors"
+                    className={`text-[11px] font-mono px-2.5 py-1 rounded-full transition-colors ${
+                      isLight
+                        ? "border border-gray-200 text-gray-500 bg-gray-50 group-hover:border-teal-200 group-hover:text-teal-600"
+                        : "border border-border-green text-primary/70 bg-primary/[0.03] group-hover:border-primary/30"
+                    }`}
                   >
                     {t}
                   </span>

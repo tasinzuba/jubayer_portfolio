@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTheme } from "./ThemeProvider";
 
 export default function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -13,6 +15,7 @@ export default function MatrixRain() {
     if (!ctx) return;
 
     let animationId: number;
+    const isLight = theme === "light";
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -28,12 +31,12 @@ export default function MatrixRain() {
 
     function draw() {
       if (!ctx || !canvas) return;
-      ctx.fillStyle = "rgba(5, 5, 5, 0.08)";
+      ctx.fillStyle = isLight ? "rgba(255, 255, 255, 0.1)" : "rgba(5, 5, 5, 0.08)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = "#00ff41";
+      ctx.fillStyle = isLight ? "#0d9488" : "#00ff41";
       ctx.font = `${fontSize}px monospace`;
-      ctx.globalAlpha = 0.06;
+      ctx.globalAlpha = isLight ? 0.025 : 0.06;
 
       for (let i = 0; i < drops.length; i++) {
         const char = chars[Math.floor(Math.random() * chars.length)];
@@ -55,7 +58,7 @@ export default function MatrixRain() {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", resize);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas

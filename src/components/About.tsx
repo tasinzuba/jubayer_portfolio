@@ -5,6 +5,7 @@ import {
   useScrollReveal,
   useStaggeredReveal,
 } from "@/hooks/useScrollReveal";
+import { useTheme } from "./ThemeProvider";
 
 const SKILLS = [
   {
@@ -35,6 +36,8 @@ export default function About() {
     sectionVisible,
     150
   );
+  const { theme } = useTheme();
+  const isLight = theme === "light";
 
   return (
     <section id="about" className="section relative overflow-hidden">
@@ -147,7 +150,11 @@ export default function About() {
                     {group.items.map((skill) => (
                       <span
                         key={skill}
-                        className="text-sm font-mono px-3.5 py-1.5 rounded-lg border border-border-green bg-primary/[0.03] text-text-muted hover:text-primary hover:border-primary/30 hover:bg-primary/[0.06] transition-all duration-200 cursor-default"
+                        className={`text-sm font-mono px-3.5 py-1.5 rounded-lg border transition-all duration-200 cursor-default ${
+                          isLight
+                            ? "border-gray-200 bg-gray-50 text-gray-600 hover:text-teal-700 hover:border-teal-200 hover:bg-teal-50"
+                            : "border-border-green bg-primary/[0.03] text-text-muted hover:text-primary hover:border-primary/30 hover:bg-primary/[0.06]"
+                        }`}
                       >
                         {skill}
                       </span>

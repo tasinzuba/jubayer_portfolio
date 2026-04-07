@@ -22,6 +22,28 @@
   --glow-lg: 0 0 40px rgba(0, 255, 65, 0.2), 0 0 100px rgba(0, 255, 65, 0.08);
 }
 
+/* ── Light Mode Variables ────────────────────────────────── */
+
+html.light {
+  --primary: #0d9488;
+  --primary-dark: #0f766e;
+  --primary-glow: rgba(13, 148, 136, 0.15);
+  --accent-cyan: #0284c7;
+  --accent-purple: #7c3aed;
+  --secondary: #ffffff;
+  --secondary-dark: #f9fafb;
+  --card-bg: #ffffff;
+  --text-primary: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #94a3b8;
+  --border-color: #e2e8f0;
+  --border-hover: rgba(13, 148, 136, 0.5);
+  --glow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --glow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --glow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --glow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
 /* ── Tailwind v4 Theme ───────────────────────────────────── */
 
 @theme inline {
@@ -53,6 +75,11 @@ html, body {
   background: #030303;
   color: var(--text-primary);
   font-family: var(--font-sans), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.light, html.light body {
+  background: #ffffff;
 }
 
 ::selection {
@@ -685,4 +712,360 @@ html, body {
 
 #cal-embed {
   color-scheme: dark;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LIGHT MODE — clean, modern developer workspace
+   ══════════════════════════════════════════════════════════ */
+
+html.light ::selection {
+  background: rgba(13, 148, 136, 0.18);
+  color: #0f172a;
+}
+
+/* ── Scrollbar ─────────────── */
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ── Terminal ──────────────── */
+
+html.light .terminal {
+  border: none;
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  color: #4ade80;
+  border-radius: 1rem;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.2),
+    0 12px 24px -8px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+html.light .terminal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+html.light .terminal-dot {
+  box-shadow: none;
+}
+
+html.light .terminal:hover .terminal-dot:nth-child(1) {
+  box-shadow: 0 0 8px #ef4444;
+}
+html.light .terminal:hover .terminal-dot:nth-child(2) {
+  box-shadow: 0 0 8px #eab308;
+}
+html.light .terminal:hover .terminal-dot:nth-child(3) {
+  box-shadow: 0 0 8px #22c55e;
+}
+
+html.light .terminal-input {
+  color: #e2e8f0;
+  caret-color: #4ade80;
+}
+
+html.light .terminal .text-primary {
+  color: #4ade80;
+}
+
+html.light .terminal .text-text-primary {
+  color: #e2e8f0;
+}
+
+html.light .terminal .text-text-dim {
+  color: #94a3b8;
+}
+
+html.light .terminal pre {
+  color: #67e8f9;
+}
+
+/* ── Scanlines — disable in light mode ── */
+
+html.light .scanlines::after {
+  display: none;
+}
+
+/* ── Cards ─────────────────── */
+
+html.light .card {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  backdrop-filter: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+html.light .card::before {
+  background: linear-gradient(90deg, transparent, rgba(13, 148, 136, 0.2), transparent);
+}
+
+html.light .card:hover {
+  border-color: #d1d5db;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.06),
+    0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
+  background: #ffffff;
+}
+
+/* ── Buttons ───────────────── */
+
+html.light .btn-primary {
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 1px 3px rgba(13, 148, 136, 0.3), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+html.light .btn-primary:hover {
+  box-shadow:
+    0 4px 14px rgba(13, 148, 136, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+html.light .btn-outline {
+  border: 1.5px solid #0d9488;
+  color: #0d9488;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+html.light .btn-outline:hover {
+  background: rgba(13, 148, 136, 0.06);
+  border-color: #0f766e;
+  box-shadow: 0 1px 3px rgba(13, 148, 136, 0.15);
+}
+
+/* ── Navigation ────────────── */
+
+html.light .nav-link {
+  color: #64748b;
+}
+
+html.light .nav-link:hover,
+html.light .nav-link.active {
+  color: #0d9488;
+}
+
+html.light .nav-link::after {
+  background: #0d9488;
+  box-shadow: none;
+}
+
+/* ── Gradient Text ─────────── */
+
+html.light .gradient-text {
+  background: linear-gradient(135deg, #0d9488, #0284c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html.light .gradient-text-warm {
+  background: linear-gradient(135deg, #0d9488, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glitch — soften for light ── */
+
+html.light .glitch-text:hover::before {
+  color: #0d9488;
+  opacity: 0.5;
+}
+
+html.light .glitch-text:hover::after {
+  color: #0284c7;
+  opacity: 0.5;
+}
+
+/* ── Section Tag ───────────── */
+
+html.light .section-tag {
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #0d9488;
+}
+
+html.light .section-tag::before {
+  background: #0d9488;
+  box-shadow: 0 0 6px rgba(13, 148, 136, 0.4);
+}
+
+/* ── Status Badge ──────────── */
+
+html.light .status-badge {
+  border: 1px solid #d1fae5;
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+html.light .status-badge .pulse-dot {
+  background: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+}
+
+/* ── Icon Glow ─────────────── */
+
+html.light .icon-glow {
+  border: 1px solid #ccfbf1;
+  background: #f0fdfa;
+  color: #0d9488;
+}
+
+html.light .card:hover .icon-glow {
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.08);
+  border-color: #99f6e4;
+  background: #ccfbf1;
+}
+
+/* ── Skill Bar ─────────────── */
+
+html.light .skill-bar {
+  background: #f1f5f9;
+}
+
+html.light .skill-bar-fill {
+  background: linear-gradient(90deg, #0d9488, #0284c7);
+}
+
+html.light .skill-bar-fill::after {
+  background: #0d9488;
+  box-shadow: 0 0 6px rgba(13, 148, 136, 0.4);
+}
+
+/* ── Glow Divider ──────────── */
+
+html.light .glow-line {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #e2e8f0 15%,
+    #cbd5e1 50%,
+    #e2e8f0 85%,
+    transparent 100%
+  );
+}
+
+html.light .glow-line::after {
+  display: none;
+}
+
+/* ── Footer Link ───────────── */
+
+html.light .footer-link:hover {
+  color: #0d9488;
+  text-shadow: none;
+}
+
+/* ── Background Effects ────── */
+
+html.light .hex-grid {
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52' viewBox='0 0 60 52'%3E%3Cpath d='M30 0L60 15v22L30 52 0 37V15z' fill='none' stroke='%230d9488' stroke-width='0.5'/%3E%3C/svg%3E");
+}
+
+html.light .spotlight {
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.04) 0%, transparent 70%);
+}
+
+/* ── Cal.com embed ─────────── */
+
+html.light #cal-embed {
+  color-scheme: light;
+}
+
+/* ── Pulse dot keyframe ────── */
+
+html.light .section-tag::before {
+  animation-name: pulse-dot-light;
+}
+
+@keyframes pulse-dot-light {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(13, 148, 136, 0.4); }
+  50% { opacity: 0.5; box-shadow: 0 0 3px rgba(13, 148, 136, 0.2); }
+}
+
+/* ── Alternating Section Backgrounds ── */
+
+html.light .section:nth-child(even) {
+  background: #f9fafb;
+}
+
+html.light .section:nth-child(odd) {
+  background: #ffffff;
+}
+
+/* ── Card — richer hover ────── */
+
+html.light .card:hover {
+  border-color: rgba(13, 148, 136, 0.2);
+  box-shadow:
+    0 10px 25px -5px rgba(13, 148, 136, 0.06),
+    0 8px 10px -6px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(13, 148, 136, 0.05);
+  transform: translateY(-4px);
+  background: #ffffff;
+}
+
+html.light .card::before {
+  background: linear-gradient(90deg, transparent, rgba(13, 148, 136, 0.25), transparent);
+}
+
+/* ── Project filter tabs ──── */
+
+html.light .section button[class*="border-white"] {
+  border-color: #e5e7eb;
+}
+
+/* ── Tech tags (white bg variants) ── */
+
+html.light [class*="bg-white\\/\\[0\\.03\\]"],
+html.light [class*="bg-white\\/\\[0\\.02\\]"] {
+  background: #f1f5f9;
+}
+
+html.light [class*="border-white\\/\\[0\\.06\\]"],
+html.light [class*="border-white\\/\\[0\\.08\\]"],
+html.light [class*="border-white\\/\\[0\\.05\\]"],
+html.light [class*="border-white\\/\\[0\\.04\\]"] {
+  border-color: #e5e7eb;
+}
+
+/* ── Terminal glow behind (sections) ── */
+
+html.light .section .absolute[class*="blur"] {
+  opacity: 0.5;
+}
+
+/* ── About section terminal (keep dark) ── */
+
+html.light .section .terminal .text-primary {
+  color: #4ade80;
+}
+
+/* ── Footer bottom divider ── */
+
+html.light .footer-link + .footer-link {
+  border-color: #e5e7eb;
+}
+
+html.light [class*="border-t"][class*="border-white"] {
+  border-color: #e5e7eb;
+}
+
+/* ── Smooth theme transition on key elements ── */
+
+html.light .card,
+html.light .btn,
+html.light .nav-link,
+html.light .section-tag,
+html.light .icon-glow,
+html.light .terminal {
+  transition: all 0.3s ease;
 }

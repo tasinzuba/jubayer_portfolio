@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { personalInfo } from "@/terminal/data";
 import { useScrollReveal, useCountUp } from "@/hooks/useScrollReveal";
+import { useTheme } from "./ThemeProvider";
 
 const TITLES = [
   "Full Stack Developer",
@@ -52,6 +53,8 @@ export default function Hero() {
   const [mounted, setMounted] = useState(false);
   const { ref: statsRef, isVisible: statsVisible } =
     useScrollReveal<HTMLDivElement>();
+  const { theme } = useTheme();
+  const isLight = theme === "light";
 
   useEffect(() => {
     setTimeout(() => setMounted(true), 100);
@@ -84,12 +87,13 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Animated grid background */}
-      <div className="absolute inset-0 opacity-[0.035]">
+      <div className={`absolute inset-0 ${isLight ? "opacity-[0.04]" : "opacity-[0.035]"}`}>
         <div
           className="w-full h-full"
           style={{
-            backgroundImage:
-              "linear-gradient(#00ff41 1px, transparent 1px), linear-gradient(90deg, #00ff41 1px, transparent 1px)",
+            backgroundImage: isLight
+              ? "linear-gradient(#0d9488 1px, transparent 1px), linear-gradient(90deg, #0d9488 1px, transparent 1px)"
+              : "linear-gradient(#00ff41 1px, transparent 1px), linear-gradient(90deg, #00ff41 1px, transparent 1px)",
             backgroundSize: "80px 80px",
           }}
         />
@@ -113,7 +117,7 @@ export default function Hero() {
       />
 
       {/* Gradient overlay at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#030303] to-transparent z-[5]" />
+      <div className={`absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t ${isLight ? "from-white" : "from-[#030303]"} to-transparent z-[5]`} />
 
       <div className="mx-auto max-w-7xl px-6 relative z-10 w-full pt-24 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
@@ -214,17 +218,42 @@ export default function Hero() {
           >
             <div className="terminal text-[11px] leading-relaxed relative">
               {/* Glow behind */}
-              <div className="absolute -inset-4 bg-primary/5 blur-3xl rounded-full" />
+              <div className={`absolute -inset-6 ${isLight ? "bg-teal-400/[0.07]" : "bg-primary/5"} blur-3xl rounded-full`} />
 
               <div className="terminal-header">
                 <div className="terminal-dot bg-red-500" />
                 <div className="terminal-dot bg-yellow-500" />
                 <div className="terminal-dot bg-green-500" />
-                <span className="ml-auto text-text-dim text-[10px] font-mono">
+                <span className={`ml-auto text-[10px] font-mono ${isLight ? "text-slate-400" : "text-text-dim"}`}>
                   jubayer@dev ~ zsh
                 </span>
               </div>
-              <pre className="text-primary/70 relative z-10">{`$ cat tech-stack.yml
+              <pre className="relative z-10">{isLight ? (
+                <>{`$ cat tech-stack.yml`}
+{"\n"}<span className="text-cyan-300">frontend:</span>
+{"\n  - Next.js (App Router)"}
+{"\n  - React / TypeScript"}
+{"\n  - Tailwind CSS"}
+{"\n"}
+{"\n"}<span className="text-cyan-300">backend:</span>
+{"\n  - Go (Gin, Fiber)"}
+{"\n  - Node.js / Express"}
+{"\n"}
+{"\n"}<span className="text-cyan-300">databases:</span>
+{"\n  - PostgreSQL / MySQL"}
+{"\n  - Redis / MongoDB"}
+{"\n"}
+{"\n"}<span className="text-cyan-300">devops:</span>
+{"\n  - Docker"}
+{"\n  - Vercel / cPanel"}
+{"\n"}
+{"\n"}<span className="text-emerald-400">$ go version</span>
+{"\ngo1.22.4 linux/amd64"}
+{"\n"}
+{"\n"}<span className="text-emerald-400">$ echo $STATUS</span>
+{"\n"}<span className="text-amber-300">&gt; Open to opportunities_</span></>
+              ) : (
+                <span className="text-primary/70">{`$ cat tech-stack.yml
 frontend:
   - Next.js (App Router)
   - React / TypeScript
@@ -246,7 +275,8 @@ $ go version
 go1.22.4 linux/amd64
 
 $ echo $STATUS
-> Open to opportunities_`}</pre>
+> Open to opportunities_`}</span>
+              )}</pre>
             </div>
           </div>
         </div>
@@ -254,7 +284,7 @@ $ echo $STATUS
         {/* Stats */}
         <div
           ref={statsRef}
-          className={`mt-16 sm:mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 py-8 px-6 rounded-xl border border-white/[0.04] bg-[#0a0a0a]/50 backdrop-blur-sm transition-all duration-700 delay-600 ${
+          className={`mt-16 sm:mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 py-8 px-6 rounded-xl border ${isLight ? "border-gray-200 bg-white shadow-sm" : "border-white/[0.04] bg-[#0a0a0a]/50"} backdrop-blur-sm transition-all duration-700 delay-600 ${
             mounted
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4"

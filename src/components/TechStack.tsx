@@ -1,6 +1,7 @@
 "use client";
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useTheme } from "./ThemeProvider";
 
 const TECH_ITEMS = [
   { name: "Next.js", color: "#fff" },
@@ -23,6 +24,8 @@ const TECH_ITEMS = [
 
 export default function TechStack() {
   const { ref, isVisible } = useScrollReveal<HTMLDivElement>();
+  const { theme } = useTheme();
+  const fadeFrom = theme === "light" ? "from-white" : "from-[#030303]";
 
   return (
     <section className="relative z-10 py-12 overflow-hidden">
@@ -37,14 +40,14 @@ export default function TechStack() {
         {/* Marquee row 1 */}
         <div className="relative">
           {/* Fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#030303] to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#030303] to-transparent z-10" />
+          <div className={`absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r ${fadeFrom} to-transparent z-10`} />
+          <div className={`absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l ${fadeFrom} to-transparent z-10`} />
 
           <div className="flex gap-6 animate-[marquee_30s_linear_infinite]">
             {[...TECH_ITEMS, ...TECH_ITEMS].map((tech, i) => (
               <div
                 key={`${tech.name}-${i}`}
-                className="flex-shrink-0 flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/[0.06] bg-white/[0.02] hover:border-primary/30 hover:bg-primary/[0.04] transition-all duration-300 group cursor-default"
+                className={`flex-shrink-0 flex items-center gap-2.5 px-5 py-2.5 rounded-full border ${theme === "light" ? "border-gray-200 bg-white shadow-sm" : "border-white/[0.06] bg-white/[0.02]"} hover:border-primary/30 hover:bg-primary/[0.04] transition-all duration-300 group cursor-default`}
               >
                 <span
                   className="w-2 h-2 rounded-full transition-shadow duration-300"

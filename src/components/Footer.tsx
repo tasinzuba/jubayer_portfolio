@@ -1,6 +1,7 @@
 "use client";
 
 import { personalInfo } from "@/terminal/data";
+import { useTheme } from "./ThemeProvider";
 
 const FOOTER_LINKS = [
   { label: "GitHub", href: personalInfo.social.github },
@@ -16,8 +17,9 @@ const QUICK_LINKS = [
 ];
 
 export default function Footer() {
+  const { theme } = useTheme();
   return (
-    <footer className="relative z-10 border-t border-border-green bg-[#030303]">
+    <footer className={`relative z-10 border-t ${theme === "light" ? "border-gray-200 bg-[#f9fafb]" : "border-border-green bg-[#030303]"}`}>
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
@@ -78,7 +80,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className={`pt-6 border-t ${theme === "light" ? "border-gray-200" : "border-white/[0.04]"} flex flex-col sm:flex-row items-center justify-between gap-3`}>
           <div className="text-text-dim text-xs font-mono">
             &copy; {new Date().getFullYear()} {personalInfo.name}. All
             rights reserved.

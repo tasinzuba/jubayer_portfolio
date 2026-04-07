@@ -6,6 +6,7 @@ import {
   useScrollReveal,
   useStaggeredReveal,
 } from "@/hooks/useScrollReveal";
+import { useTheme } from "./ThemeProvider";
 
 const INITIAL_COUNT = 6;
 
@@ -37,6 +38,8 @@ export default function Projects() {
     useScrollReveal<HTMLDivElement>();
   const { ref: gridRef, isVisible: gridVisible } =
     useScrollReveal<HTMLDivElement>({ threshold: 0.05 });
+  const { theme } = useTheme();
+  const isLight = theme === "light";
 
   const filtered = useMemo(
     () =>
@@ -90,8 +93,12 @@ export default function Projects() {
               onClick={() => handleFilterChange(cat.key)}
               className={`font-mono text-xs px-4 py-2 rounded-full border transition-all duration-300 cursor-pointer ${
                 activeFilter === cat.key
-                  ? "border-primary bg-primary/10 text-primary shadow-[0_0_15px_rgba(0,255,65,0.1)]"
-                  : "border-white/[0.08] text-text-dim hover:border-primary/30 hover:text-text-muted"
+                  ? isLight
+                    ? "border-teal-300 bg-teal-50 text-teal-700 shadow-sm"
+                    : "border-primary bg-primary/10 text-primary shadow-[0_0_15px_rgba(0,255,65,0.1)]"
+                  : isLight
+                    ? "border-gray-200 text-gray-500 hover:border-teal-200 hover:text-gray-700 hover:bg-gray-50"
+                    : "border-white/[0.08] text-text-dim hover:border-primary/30 hover:text-text-muted"
               }`}
             >
               {cat.label}
@@ -157,7 +164,11 @@ export default function Projects() {
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="text-[10px] font-mono px-2 py-0.5 rounded-full text-text-dim bg-white/[0.03] border border-white/[0.06] group-hover:text-primary/80 group-hover:border-primary/15 transition-colors"
+                      className={`text-[10px] font-mono px-2 py-0.5 rounded-full transition-colors ${
+                        isLight
+                          ? "text-gray-500 bg-gray-100 border border-gray-200 group-hover:text-teal-600 group-hover:border-teal-200 group-hover:bg-teal-50"
+                          : "text-text-dim bg-white/[0.03] border border-white/[0.06] group-hover:text-primary/80 group-hover:border-primary/15"
+                      }`}
                     >
                       {t}
                     </span>
@@ -165,7 +176,7 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-4 pt-3 border-t border-white/[0.05]">
+                <div className={`flex gap-4 pt-3 border-t ${isLight ? "border-gray-100" : "border-white/[0.05]"}`}>
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}

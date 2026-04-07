@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { personalInfo } from "@/terminal/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useTheme } from "./ThemeProvider";
 
 export default function Contact() {
   const { ref: headerRef, isVisible: headerVisible } =
@@ -10,6 +11,7 @@ export default function Contact() {
   const { ref: contentRef, isVisible: contentVisible } =
     useScrollReveal<HTMLDivElement>();
   const calLoaded = useRef(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (calLoaded.current) return;
@@ -92,9 +94,9 @@ export default function Contact() {
             <div className="relative group">
               <div className="absolute -inset-4 bg-primary/[0.02] blur-3xl rounded-3xl" />
 
-              <div className="relative rounded-xl border border-border-green overflow-hidden">
+              <div className={`relative rounded-xl border overflow-hidden ${theme === "light" ? "border-gray-200 shadow-lg" : "border-border-green"}`}>
                 {/* Terminal header */}
-                <div className="flex items-center gap-2 px-5 py-3 border-b border-border-green bg-[#0a0a0a]">
+                <div className={`flex items-center gap-2 px-5 py-3 border-b ${theme === "light" ? "border-gray-200 bg-[#1e293b]" : "border-border-green bg-[#0a0a0a]"}`}>
                   <div className="terminal-dot bg-red-500" />
                   <div className="terminal-dot bg-yellow-500" />
                   <div className="terminal-dot bg-green-500" />
@@ -149,7 +151,7 @@ export default function Contact() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-mono text-text-dim hover:text-primary transition-colors px-3 py-1.5 rounded-lg border border-white/[0.06] hover:border-primary/20"
+                  className={`text-xs font-mono text-text-dim hover:text-primary transition-colors px-3 py-1.5 rounded-lg border ${theme === "light" ? "border-gray-200 hover:border-teal-200" : "border-white/[0.06] hover:border-primary/20"}`}
                 >
                   {link.label}
                 </a>
