@@ -5,13 +5,13 @@
 export const personalInfo = {
   name: "Md Jubayer Ahamed",
   handle: "jubayer",
-  title: "Full Stack Developer & Digital Marketing Expert",
+  title: "Full Stack Developer & SEO, Digital Marketing Expert",
   subtitle: "Next.js | Go | React | Node.js | SEO | Digital Marketing",
   email: "tasinahmed423@gmail.com",
   phone: "+880 1732134482",
   location: "Dhaka, Bangladesh",
   bio: [
-    "Full-Stack Web Developer and Digital Marketing Expert specializing in",
+    "Full-Stack Web Developer and SEO Optimizer & Digital Marketing Expert specializing in",
     "Next.js, React, Go, Node.js, WordPress, Facebook Marketing, SEO, and",
     "comprehensive digital marketing strategies.",
     "",
@@ -28,7 +28,7 @@ export const personalInfo = {
     facebook: "https://www.facebook.com/jubayerahamed82",
     whatsapp: "https://wa.me/8801732134482",
   },
-  resume: "/Md-Jubayer-Ahamed.pdf",
+  resume: "/CV%20Jubayer.pdf",
 };
 
 export interface Project {
@@ -56,11 +56,11 @@ export const projects: Project[] = [
   },
   {
     id: "biic-new",
-    title: "BIIC — Study Abroad Platform",
+    title: "BIIC — Banglay IELTS & Immigration Center",
     description:
-      "Full-stack study abroad consultancy platform built with Next.js. University admissions, visa support, IELTS prep, scholarship guidance with smooth animations.",
+      "Heddless app for study abroad & immigration services. SEO-optimized, Lighthouse 90+, conversion-focused CTAs. Built with Next.js, React, Tailwind CSS, and server-side rendering (SSR) for optimal performance.",
     tech: ["Next.js", "React", "Tailwind CSS", "SSR"],
-    liveUrl: "https://biic-new.vercel.app/",
+    liveUrl: "https://biic.com.bd/",
     featured: true,
     category: "fullstack",
   },
@@ -68,9 +68,9 @@ export const projects: Project[] = [
     id: "bielts-dashboard",
     title: "Banglay IELTS Teacher Dashboard",
     description:
-      "Teacher management dashboard for IELTS preparation platform. PWA-enabled, real-time data, role-based access, mobile-optimized.",
+      "Teacher management dashboard for IELTS preparation platform. PWA-enabled, real-time data, role-based access, mobile-optimized. Teacher automation, analytics, and performance tracking. Built with Next.js, TypeScript, Tailwind CSS, and PWA features for offline access.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "PWA"],
-    liveUrl: "http://tr.biic.com.bd/",
+    liveUrl: "#",
     featured: true,
     category: "fullstack",
   },
@@ -91,48 +91,48 @@ export const projects: Project[] = [
     description:
       "Portfolio & course platform for a professional video editor. Showcases editing services, online course, testimonials, and cinematic work.",
     tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
-    liveUrl: "https://portfolio-site-pi-orcin-42.vercel.app/",
+    liveUrl: "#",
     featured: true,
     category: "frontend",
   },
   {
-    id: "movie-portal",
-    title: "Recape Movie — Movie Portal",
+    id: "IELTS Practice App",
+    title: "IELTS Workbook & Practice Portal",
     description:
-      "Movie discovery & review platform. Browse 500+ movies, community ratings, watchlists, subscription plans, genre filtering.",
+      "IELTS preparation platform with practice tests, study materials, and progress tracking.",
     tech: ["Next.js", "React", "Tailwind CSS", "SSR"],
-    liveUrl: "https://movie-portal-frontend-eight.vercel.app/",
+    liveUrl: "https://offline.banglayielts.com/",
     featured: true,
     category: "fullstack",
   },
   {
-    id: "medistore",
-    title: "MediStore — Online Pharmacy",
+    id: "organization-website",
+    title: "Konabari Bhai Brother Organization",
     description:
-      "Online pharmacy platform for Bangladesh. Medicine catalog, cart, auth, category browsing, fast delivery system.",
+      "Non-profit organization website with event management, donation system, and volunteer registration.",
     tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
-    liveUrl: "https://frontend-one-orpin-24.vercel.app/",
+    liveUrl: "https://konabari-bhai-brothers.vercel.app/",
     featured: true,
     category: "fullstack",
   },
   // ── Other projects ─────────────────────────────────────────
   {
     id: "3",
-    title: "Go REST API Microservice",
+    title: "Kajla Society Website",
     description:
-      "High-performance RESTful API built with Go and Gin framework. JWT auth, rate limiting, PostgreSQL, Docker containerized.",
-    tech: ["Go", "Gin", "PostgreSQL", "Docker", "JWT"],
-    githubUrl: "https://github.com/tasinzuba/go-rest-api",
+      "Community website for Kajla Society. Event listings, member directory, and news updates.",
+    tech: ["Next.js", "React", "PostgreSQL", "NextAuth.js", "JWT"],
+    githubUrl: "https://frontend-jade-kappa-95.vercel.app/",
     featured: true,
-    category: "backend",
+    category: "fullstack",
   },
   {
     id: "4",
-    title: "Next.js Dashboard App",
+    title: "Paycheque - Full stack Company Salary Management Software",
     description:
-      "Full-stack analytics dashboard with Next.js App Router, server actions, real-time charts, and role-based auth.",
+      "Full-stack salary management software for companies. Employee records, payroll processing, tax calculations, and reporting. all authentication and authorization handled with NextAuth.js and JWT.",
     tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind"],
-    githubUrl: "https://github.com/tasinzuba/nextjs-dashboard",
+    githubUrl: "https://salary-management-zeta.vercel.app",
     featured: false,
     category: "fullstack",
   },
@@ -148,13 +148,13 @@ export const projects: Project[] = [
   },
   {
     id: "6",
-    title: "Go CLI Task Manager",
+    title: "reThink - Study Planner & Task Manager",
     description:
-      "Terminal-based task manager built in Go with Cobra CLI. SQLite storage, priority system, Markdown export.",
-    tech: ["Go", "Cobra", "SQLite", "CLI"],
-    githubUrl: "https://github.com/tasinzuba/go-task-cli",
+      "Task management app for students. Task scheduling, reminders, progress tracking, and analytics.",
+    tech: ["Next.js", "React", "neondb"],
+    githubUrl: "https://rethink-study-planner.vercel.app/",
     featured: false,
-    category: "backend",
+    category: "fullstack",
   },
   {
     id: "8",
@@ -162,7 +162,7 @@ export const projects: Project[] = [
     description:
       "Sports footwear e-commerce. Product filtering, size selection, reviews, secure checkout.",
     tech: ["WordPress", "WooCommerce", "PHP", "MySQL"],
-    liveUrl: "http://90skickofficial.com",
+    liveUrl: "#",
     featured: false,
     category: "fullstack",
   },
@@ -172,30 +172,9 @@ export const projects: Project[] = [
     description:
       "Modern React-based e-commerce. Full product catalog, cart, auth, responsive design.",
     tech: ["React", "JavaScript", "CSS", "Vercel"],
-    liveUrl: "https://react-e-commerce-main-zeta.vercel.app/",
-    githubUrl: "https://github.com/tasinzuba/React_E-Commerce-main",
+    liveUrl: "#",
     featured: false,
     category: "frontend",
-  },
-  {
-    id: "10",
-    title: "Go URL Shortener",
-    description:
-      "Fast URL shortener service with Go and Redis. Custom slugs, analytics dashboard, rate limiting, and REST API.",
-    tech: ["Go", "Fiber", "Redis", "PostgreSQL", "Docker"],
-    githubUrl: "https://github.com/tasinzuba/go-url-shortener",
-    featured: false,
-    category: "backend",
-  },
-  {
-    id: "11",
-    title: "Next.js SaaS Starter",
-    description:
-      "Production-ready SaaS template with Next.js. Stripe billing, auth, admin panel, multi-tenant architecture.",
-    tech: ["Next.js", "TypeScript", "Stripe", "Prisma", "NextAuth"],
-    githubUrl: "https://github.com/tasinzuba/nextjs-saas-starter",
-    featured: false,
-    category: "fullstack",
   },
 ];
 
@@ -208,18 +187,20 @@ export const skillCategories: SkillCategory[] = [
   {
     name: "Frontend",
     skills: [
-      { name: "React", level: 92 },
       { name: "Next.js", level: 90 },
+      { name: "React", level: 92 },
       { name: "TypeScript", level: 88 },
       { name: "Tailwind CSS", level: 92 },
       { name: "HTML5 / CSS3", level: 95 },
+      {name: "bootstrap", level: 85},
+      {name: "framer motion", level: 80},
     ],
   },
   {
     name: "Backend",
     skills: [
-      { name: "Go (Golang)", level: 85 },
       { name: "Node.js / Express", level: 88 },
+      { name: "Go (Golang)", level: 85 },
       { name: "REST API Design", level: 92 },
     ],
   },
@@ -237,9 +218,10 @@ export const skillCategories: SkillCategory[] = [
     name: "Digital Marketing",
     skills: [
       { name: "Facebook Ads", level: 95 },
-      { name: "Google Ads", level: 90 },
       { name: "SEO", level: 92 },
       { name: "Analytics", level: 88 },
+      {name: "Content Marketing", level: 90},
+      {name: "Google Tags & GTM", level: 85},
     ],
   },
 ];
@@ -255,8 +237,8 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    company: "Rethink",
-    role: "Web Developer",
+    company: "reThink",
+    role: "Web Developer & Content Optimizer",
     period: "Oct 2025 — Present",
     location: "Dhaka, Bangladesh",
     current: true,
@@ -267,12 +249,15 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "Banglay IELTS",
+    company: "Banglay IELTS & Immigration Center",
     role: "Web Developer",
     period: "Dec 2024 — Present",
     location: "Dhaka, Bangladesh",
     current: true,
     achievements: [
+      "Developed and maintained multiple client websites",
+      "ILTS preparation platform with practice tests, study materials, and progress tracking",
+      "Maintained and optimized CDIELTS mock test system with real-time feedback and analytics",
       "SEO optimization → 150% organic traffic increase",
       "Conversion-optimized CTAs → 40% enrollment boost",
       "Lighthouse performance scores 90+ across all projects",
@@ -290,6 +275,22 @@ export const experiences: Experience[] = [
       "Built Go microservices with Docker deployment",
       "Next.js apps with server components & ISR",
       "100% client satisfaction rate",
+    ],
+  },
+
+      {
+    company: "Next Level Web Development Bootcamp",
+    role: "Student — Level 2 Batch 6",
+    period: "Dec 2025 — Jun 2026",
+    location: "Online",
+    current: false,
+    achievements: [
+      "Completed full-stack web development course",
+      "Built 15+ hands-on projects",
+      "Mastered React, Node.js, MongoDB stack",
+      "Golang (Go) microservices development",
+      "Docker deployment and containerization",
+      "AI integration with OpenAI API",
     ],
   },
   {

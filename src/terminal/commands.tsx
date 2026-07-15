@@ -87,7 +87,7 @@ function aboutCommand(): CommandOutput {
         </div>
         <div className="border-t border-border-green mt-3 pt-3 space-y-1">
           <p className="text-primary font-bold">Key Highlights:</p>
-          <p className="text-text-primary">→ 15+ websites delivered with 100% client satisfaction</p>
+          <p className="text-text-primary">→ 25+ websites delivered with 100% client satisfaction</p>
           <p className="text-text-primary">→ 150% organic traffic increase through SEO strategies</p>
           <p className="text-text-primary">→ Lighthouse scores 90+ across all projects</p>
           <p className="text-text-primary">→ Expert in both development AND marketing — a rare combo</p>

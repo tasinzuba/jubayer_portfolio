@@ -15,6 +15,30 @@ const SERVICES = [
     tech: ["Next.js", "React", "TypeScript", "Vercel"],
     gradient: "from-primary/20 to-accent-cyan/10",
   },
+    {
+    icon: "{S}",
+    title: "SEO Optimization",
+    description:
+      "Data-driven SEO strategies that boost organic traffic by 150%+. Technical SEO, content optimization.",
+    tech: ["Analytics", "Search Console", "Ahrefs"],
+    gradient: "from-primary/20 to-accent-purple/10",
+  },
+    {
+    icon: "[F]",
+    title: "Digital Marketing",
+    description:
+      "Facebook Ads, Google Ads, and social media campaigns. Conversion-focused strategies with measurable ROI.",
+    tech: ["Facebook Ads", "Google Ads", "Social Media"],
+    gradient: "from-accent-purple/20 to-primary/10",
+  },
+    {
+    icon: "(/)",
+    title: "WordPress Customization & Maintenance",
+    description:
+      "Custom WordPress themes, WooCommerce stores, and ongoing maintenance. Security, backups, and monitoring.",
+    tech: ["WordPress", "PHP", "cPanel", "Security"],
+    gradient: "from-accent-cyan/20 to-primary/10",
+  },
   {
     icon: "go>",
     title: "Go Backend & APIs",
@@ -31,30 +55,7 @@ const SERVICES = [
     tech: ["WooCommerce", "Stripe", "React", "MySQL"],
     gradient: "from-accent-purple/20 to-primary/10",
   },
-  {
-    icon: "{S}",
-    title: "SEO Optimization",
-    description:
-      "Data-driven SEO strategies that boost organic traffic by 150%+. Technical SEO, content optimization.",
-    tech: ["Analytics", "Search Console", "Ahrefs"],
-    gradient: "from-primary/20 to-accent-purple/10",
-  },
-  {
-    icon: "[F]",
-    title: "Digital Marketing",
-    description:
-      "Facebook Ads, Google Ads, and social media campaigns. Conversion-focused strategies with measurable ROI.",
-    tech: ["Facebook Ads", "Google Ads", "Social Media"],
-    gradient: "from-accent-purple/20 to-primary/10",
-  },
-  {
-    icon: "(/)",
-    title: "WordPress & Maintenance",
-    description:
-      "Custom WordPress themes, WooCommerce stores, and ongoing maintenance. Security, backups, and monitoring.",
-    tech: ["WordPress", "PHP", "cPanel", "Security"],
-    gradient: "from-accent-cyan/20 to-primary/10",
-  },
+
 ];
 
 export default function Services() {
